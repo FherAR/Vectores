@@ -3,36 +3,26 @@ son los vectores y n su tamaño, el producto escalar se calcula como la sumatori
 de V(i)*W(i)
 
 #include <iostream>
-#include <vector>
 using namespace std;
 
 int main() {
-    int suma = 0; 
     int n;
-    
-    cout << "Ingresa el tamaño 'n' de los vectores: ";
+    float v[100], w[100], suma = 0;
+
+    cout << "Tamano de los vectores: ";
     cin >> n;
 
-    vector<int> V(n);
-    vector<int> W(n);
+    cout << "Ingrese datos del Vector V:\n";
+    for (int i = 0; i < n; i++) cin >> v[i];
 
-    cout << "\nIngrese los datos para el Vector V" << endl;
-    for (int i = 0; i < n; i++) {
-        cout << "V[" << i << "]: ";
-        cin >> V[i];
-    }
-
-    cout << "\nIngreso de datos para el Vector W" << endl;
-    for (int i = 0; i < n; i++) {
-        cout << "W[" << i << "]: ";
-        cin >> W[i];
-    }
+    cout << "Ingrese datos del Vector W:\n";
+    for (int i = 0; i < n; i++) cin >> w[i];
 
     for (int i = 0; i < n; i++) {
-        suma += V[i] * W[i]; 
+        suma += (v[i] * w[i]);
     }
 
-    cout << "El producto escalar de V y W es: " << suma << endl;
+    cout << "El producto escalar es: " << suma << endl;
 
-    }
-
+    return 0;
+}
